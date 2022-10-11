@@ -4,6 +4,9 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update -y
 
+### Uninstall old version
+#apt-get remove -y docker docker-engine docker.io containerd runc
+
 ### Install using the repository
 ### Set up the repository
 apt-get install -y ca-certificates curl gnupg lsb-release
@@ -19,10 +22,11 @@ VERSION_STRING=$(apt-cache madison docker-ce | cut -d"|" -f2 | head -n1)
 apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-compose-plugin
 
 ### add docker to root
-USER="ubuntu"
-groupadd docker
-usermod -aG docker $USER
+USER=$(cat /etc/passwd | grep 1000 | awk -F ':' ' {print $1}')
+if [ $(getent group | grep docker) ];then :;else groupadd docker ; fi 
+usermod --append --groups docker "$USER"
 newgrp docker
+printf '\nDocker installed successfully\n\n'
 
 ### enable docker
 systemctl enable docker.service
