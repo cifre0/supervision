@@ -11,4 +11,4 @@
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
 # 3  *  *  *  * root curl -X POST  "https://push.statuscake.com/?PK=53c95866914c6cf&TestID=6678558&time=0"
-*/3 * * * * root /etc/script/scriptCrontab.sh &>/var/log/cron.log
+*/3 * * * * root cd /etc/script/ sh scriptCrontab.sh >>/var/log/cron.log
