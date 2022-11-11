@@ -22,9 +22,9 @@ VERSION_STRING=$(apt-cache madison docker-ce | cut -d"|" -f2 | head -n1)
 apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-compose-plugin
 
 ### add docker to root
-USER=$(cat /etc/passwd | grep 1000 | awk -F ':' ' {print $1}')
+user=$(cat /etc/passwd | grep 1000 | awk -F ':' ' {print $1}')
 if [ $(getent group | grep docker) ];then :;else groupadd docker ; fi 
-usermod --append --groups docker "$USER"
+usermod --append --groups docker "$user"
 newgrp docker
 printf '\nDocker installed successfully\n\n'
 
