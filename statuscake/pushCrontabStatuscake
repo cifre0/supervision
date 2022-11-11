@@ -17,4 +17,4 @@ SHELL=/bin/sh
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
 # 3  *  *  *  * root curl -X POST  "https://push.statuscake.com/?PK=53c95866914c6cf&TestID=6678558&time=0"
- 3  *  *  *  * root  /etc/script/scriptCrontab.sh
+3  *  *  *  * root  /etc/script/scriptCrontab.sh
