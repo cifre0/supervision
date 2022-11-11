@@ -16,4 +16,5 @@ SHELL=/bin/sh
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
-3  *  *  *  * root curl -X POST "https://push.statuscake.com/?PK=7eed99d04845a40&TestID=6678247&time=0"
+# 3  *  *  *  * root curl -X POST "https://push.statuscake.com/?PK=7eed99d04845a40&TestID=6678247&time=0"
+3  *  *  *  * root curl -X POST  "https://push.statuscake.com/?PK=53c95866914c6cf&TestID=6678558&time=0"
